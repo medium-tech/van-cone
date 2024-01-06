@@ -114,7 +114,7 @@ link({name: 'user', params: {id: 123}, query: {'data': 'hello'}, context: data},
 ```
 
 ### different backend endpoint
-When data is fetched from a different endpoint provide a backend path as follows. See [backendUrl](./API_REFERENCE.md#backendurlroutename-params---query) for information on generating a backend url for fetching data.
+When data is fetched from a different endpoint provide a backend path as follows. See [backendUrl](./API_REFERENCE.md#backendurlroutename-params-query) for information on generating a backend url for fetching data.
 ```javascript
 const routes = [
     {
@@ -165,6 +165,7 @@ const routes = [{
 ];
 ```
 
+define component:
 ```javascript
 // ./app/pages/homePage.js
 import van from "vanjs-core";
