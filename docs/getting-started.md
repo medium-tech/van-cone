@@ -69,8 +69,8 @@ HTML:
 ```
 
 # Components
-In [VanJS](https://vanjs.org) and Van Cone components are simply Javascript functions, there is no need for a specific object type as it adds unnecessary overhead to the frameworks. However, you'll note in the example above the `userPage` "component" is expecting a parameter `params` which is an object that includes a `userId` property parsed out of the url. The Van Cone router passes a specific set of arguments to the "component" which are standard in many SPA frameworks. Read the [Component Guide](./COMPONENT_GUIDE.md) for more information.
+In [VanJS](https://vanjs.org) and Van Cone components are simply Javascript functions, there is no need for a specific object type as it adds unnecessary overhead to the frameworks. However, you'll note in the example above the `userPage` "component" is expecting a parameter `params` which is an object that includes a `userId` property parsed out of the url. The Van Cone router passes a specific set of arguments to the "component" which are standard in many SPA frameworks. Read the [Component Guide](./component-guide.md) for more information.
 
 # What next?
-* [API Documentation](./API_REFERENCE.md)
-* [Component Guide](./COMPONENT_GUIDE.md)
+* [API Documentation](./api-reference.md)
+* [Component Guide](./component-guide.md)

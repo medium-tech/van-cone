@@ -27,7 +27,7 @@ const myComponent = (params, query, context) => div(...)
 
 `query` - an object of query string parameters, if none exist in the url this will be an empty object.
 
-`context` - additional context (for example prefetched data) can be passed to the component when navigating using the [link component](./API_REFERENCE.md#linkprops-children) or the programmatic navigation function [navigate](./API_REFERENCE.md#navigateroutename-options). If none is provided this will be an empty object. Typically this would be an object but it could be any data type.
+`context` - additional context (for example prefetched data) can be passed to the component when navigating using the [link component](./api-reference.md#linkprops-children) or the programmatic navigation function [navigate](./api-reference.md#navigateroutename-options). If none is provided this will be an empty object. Typically this would be an object but it could be any data type.
 
 ## examples
 
@@ -106,7 +106,7 @@ const userPage = (params, query, context) => {
 
 ```
 
-You can use the [`link`](./API_REFERENCE.md#linkprops-children) component to navigate to this page like this:
+You can use the [`link`](./api-reference.md#linkprops-children) component to navigate to this page like this:
 
 ```javascript
 const data = {'name': 'María'}
@@ -114,7 +114,7 @@ link({name: 'user', params: {id: 123}, query: {'data': 'hello'}, context: data},
 ```
 
 ### different backend endpoint
-When data is fetched from a different endpoint provide a backend path as follows. See [backendUrl](./API_REFERENCE.md#backendurlroutename-params-query) for information on generating a backend url for fetching data.
+When data is fetched from a different endpoint provide a backend path as follows. See [backendUrl](./api-reference.md#backendurlroutename-params-query) for information on generating a backend url for fetching data.
 ```javascript
 const routes = [
     {
