@@ -1,4 +1,4 @@
-# Van Cone | component and routing guide
+# Component and routing guide
 
 In an effort to keep the VanJS ecosystem lightweight Van Cone does define a component object like many reactive frameworks however you will see that they are not necessary with Van Cone/VanJS. When the term component is used in Van Cone documentation it refers to a callable that takes a specific set of arguments from the Van Cone router and returns a tag element from Van JS, for example `van.tags.div`.
 

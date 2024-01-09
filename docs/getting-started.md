@@ -14,7 +14,7 @@ npm install van-cone
 
 Van Cone is a minimal framework that provides routing, history and a link component that provides dynamic styling for when it is the active link.
 
-There is only one exported function which is used to create an application object. You provide it with the DOM element that will contain the app, a list of routes, and an optional default state for `window.history.state` and it returns an object with several SPA helper functions.
+There is only one exported function [`createCone`](./api-reference.md#createconerouterelement-routes-defaultnavstate) which is used to create an application object. You provide it with the DOM element that will contain the app, a list of routes, and an optional default state for `window.history.state` and it returns an object with several SPA helper functions.
 
 ### A basic application
 Javascript:
@@ -69,7 +69,15 @@ HTML:
 ```
 
 # Components
-In [VanJS](https://vanjs.org) and Van Cone components are simply Javascript functions, there is no need for a specific object type as it adds unnecessary overhead to the frameworks. However, you'll note in the example above the `userPage` "component" is expecting a parameter `params` which is an object that includes a `userId` property parsed out of the url. The Van Cone router passes a specific set of arguments to the "component" which are standard in many SPA frameworks. Read the [Component Guide](./component-guide.md) for more information.
+In [VanJS](https://vanjs.org) and Van Cone components are simply Javascript functions, there is no need for a specific object type as it adds unnecessary overhead to the frameworks. However, you'll note in the example above the `userPage` "component" is expecting a parameter `params` which is an object that includes a `userId` property parsed out of the url. The Van Cone router passes a specific set of arguments to the "component" which are commonly found in SPA frameworks. Read the [Component Guide](./component-guide.md) for more information.
+
+# Navigation
+## component navigation 
+- [link](./api-reference.md#linkprops-children)
+
+## programmatic navigation functions
+- [navigate](./api-reference.md#navigateroutename-options)
+- [pushHistory](./api-reference.md#pushhistoryroutename-options)
 
 # What next?
 * [API Documentation](./api-reference.md)
