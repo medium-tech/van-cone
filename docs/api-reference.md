@@ -1,7 +1,5 @@
 # API Reference
 
-# API Reference
-
 🚨 **Van Cone is in Beta - API changes are possible** 🚨
 
  ### createCone(routerElement, routes, defaultNavState)
