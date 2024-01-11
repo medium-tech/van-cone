@@ -1,7 +1,5 @@
 # API Reference
 
-🚨 **Van Cone is in Beta - API changes are possible** 🚨
-
  ### createCone(routerElement, routes, defaultNavState)
  The only exported function from the module, used to create an application.
 

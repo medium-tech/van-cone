@@ -1,9 +1,5 @@
 # Getting Started
 
-### 🚨 **Van Cone is in Beta** 🚨
-
-At this point API changes are not expected but possible, the API is almost frozen for a version 1. I'm waiting to take it out of alpha status until I have unittests written, now that I'm almost settled on the API, those are my next task. Also see contribution instructions below if you can contribute.
-
 # Installation
 
 ```bash
