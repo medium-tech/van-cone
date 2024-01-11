@@ -37,7 +37,10 @@ npm run build
 npm run bundle-visualizer
 ```
 
-## Credit
-router based on [minimal router](https://github.com/jmhdez/minimal-router) (no longer maintained)
+**tests**
+```bash
+npm run test
+```
 
+## Credit
 spa app based on this [example app](https://github.com/ndrean/vanjs-dialog-modal) from [@ndrean](https://github.com/ndrean)
