@@ -1,6 +1,6 @@
 #!/bin/bash
 cd examples/hello-world
-npm run test
+npm install && npm run test
 
 cd ../spa-app
-npm run test
+npm install && npm run test
