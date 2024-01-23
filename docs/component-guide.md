@@ -1,10 +1,10 @@
 # Component and routing guide
 
-In an effort to keep the VanJS ecosystem lightweight Van Cone does define a component object like many reactive frameworks however you will see that they are not necessary with Van Cone/VanJS. When the term component is used in Van Cone documentation it refers to a callable that takes a specific set of arguments from the Van Cone router and returns a tag element from Van JS, for example `van.tags.div`.
+In an effort to keep the VanJS ecosystem minimal Van Cone does not define a component object or function like many reactive frameworks however you will see that they are not necessary with Van Cone and VanJS. When the term component is used in Van Cone documentation it refers to a callable that takes a specific set of arguments from the Van Cone router and returns a tag element from Van JS, for example `van.tags.div`. These "components" are only used with the router to create a navigable page, for other re-useable "components" you can use a bare function like normal VanJS code.
 
 In this guide you will find:
 
-* [component function definition](#function-signature)
+* [component function signature](#function-signature)
 * [a hello world example](#hello-world-with-router)
 * [a url and query param example](#url--query-params-example)
 * [a full component example with nav link component and context](#full-component-example)
@@ -29,7 +29,11 @@ const myComponent = (params, query, context) => div(...)
 
 `context` - additional context (for example prefetched data) can be passed to the component when navigating using the [link component](./api-reference.md#linkprops-children) or the programmatic navigation function [navigate](./api-reference.md#navigateroutename-options). If none is provided this will be an empty object. Typically this would be an object but it could be any data type.
 
-## examples
+## function return
+
+An `HTMLElement`, typically (but not necessarily) created by a VanJS tag, such as `van.tags.div`.
+
+# Examples
 
 ### the hello world
 
