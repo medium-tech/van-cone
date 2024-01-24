@@ -12,6 +12,9 @@ Van Cone is a minimal framework that provides routing, history and a link compon
 
 Van Cone has only one exported function [`createCone`](./api-reference.md#createconerouterelement-routes-defaultnavstate) which is used to create an application object. You provide it with the DOM element that will contain the app, a list of routes, and an optional default state for `window.history.state` and it returns an object with several SPA helper functions.
 
+### TypeScript
+- Supported! 🥳
+
 # Your first Van Cone App
 
 Init your npm project

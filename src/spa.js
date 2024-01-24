@@ -43,7 +43,6 @@ class Router {
         // call route handler or throw error
 		if (route) {
 			route.handler({params, query, context});
-			return route;
 		}else{
             throw new Error(`Route not found for ${url}`)
         }
@@ -125,9 +124,7 @@ function createCone(routerElement, routes, defaultNavState, routerConfig) {
     }
 
     // window navigation events
-    window.onpopstate = (event) => {
-        router.dispatch(event.target.location.href)
-    };
+    window.onpopstate = (event) => router.dispatch(event.target.location.href)
 
     window.onload = (event) => {
         setNavState(window.history.state)
@@ -143,9 +140,7 @@ function createCone(routerElement, routes, defaultNavState, routerConfig) {
         if (typeof navState !== 'undefined') setNavState(navState)
         history.pushState(getNavState(), '', url);
 
-        if (typeof options.dispatch === 'undefined' || options.dispatch === true) {
-            router.dispatch(url, context)
-        }
+        if (typeof options.dispatch === 'undefined' || options.dispatch === true) router.dispatch(url, context)
 
         return url
     }

@@ -4,6 +4,7 @@
   "description": "a lightweight package providing basic SPA such as routing, history and navigation functionality for VanJS applications",
   "homepage": "https://github.com/vanjs-org/van/blob/main/addons/van_cone/README.md",
   "main": "src/spa.js",
+  "types": "src/spa.d.ts",
   "scripts": {
     "test": "./test.sh"
   },

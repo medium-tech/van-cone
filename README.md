@@ -17,6 +17,7 @@ This lightweight (less than 200 lines) VanJS addon adds the following features:
     - easily add url and query params as objects
     - dynamic css styling for active route
     - pass additional context data such as a prefetched data or other configuration to route component
+- TypeScript support
 
 # Overview
 
@@ -123,6 +124,9 @@ Some things I'm interested in.
 
 # The Name
 Van Cone is an addon for VanJS which is short for **Van**illa **J**ava**S**cript, and makes a callout to vanilla ice cream in its logo. Van Cone provides the cone that is needed to support the ice cream. VanJS provides reactivity and UI components, Van Cone provides routing, history and navigation components, together they're everything you need for a lightweight SPA experience!
+
+# Contributors
+- [@yahia-berashish](https://github.com/yahia-berashish)
 
 # Credit
 Router based on [minimal router](https://github.com/jmhdez/minimal-router) (no longer maintained).
