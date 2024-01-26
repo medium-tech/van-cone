@@ -84,12 +84,10 @@ Example HTML:
 
 # Documentation and examples
 
-- [relative file link](./docs/API_REFERENCE.md) - if you're viewing on github or local repo
+- [relative file link](./docs/api-reference.md) - if you're viewing on github or local repo
 - [absolute url](https://github.com/vanjs-org/van/blob/main/addons/van_cone/docs/API_REFERENCE.md) - if you're viewing on npmjs.org or other external mirrors
 
 # Changelog
-**1.0.0**
-- Van Cone is out of beta!
 
 **0.0.4**
 - change `navigate` and `pushHistory` to use route names instead of url strings, and accept optional nav state, they now return the url string.
@@ -118,8 +116,6 @@ I, [@b-rad-c](https://github.com/b-rad-c) am the maintainer of this project howe
 
 ### Roadmap
 Some things I'm interested in.
-* TypeScript support
-* declarative routes, see [./docs/DECLARATIVE_ROUTES.md](./docs/DECLARATIVE_ROUTES.md)
 * type conversion for query parameters, currently query params and passed to the component as strings.
 
 # The Name

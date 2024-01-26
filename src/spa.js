@@ -49,6 +49,7 @@ class Router {
 	}
 
 	_formatUrl(routeName, isBackend, params = {}, query = {}) {
+        console.log('formatting url', routeName, isBackend, params, query)
 		const route = this.routes.find(r => r.name === routeName);
 
 		if (!route) {
@@ -80,16 +81,22 @@ class Router {
 	}
 };
 
-function createCone(routerElement, routes, defaultNavState, routerConfig) {
+const route = (routeName, path, component, options) => {
+    return { name: routeName, path, component, ...options }
+}
+
+function createCone(coneConfig) {
+    const { routerElement, routes, defaultNavState, routerConfig } = coneConfig
 
     const currentPage = van.state("")
 
     const isCurrentPage = (pageName) => van.derive(() => currentPage.val === pageName)
 
-    // router
+    // routing
     const router = new Router(routerConfig);
 
-    routes.forEach(route => {
+    const buildRoute = (route) => {
+        console.log('building route', route)
         router.add(route.name, route.path, route.backend, function({params, query, context}) {
             currentPage.val = route.name
             if (route.title) window.document.title = route.title
@@ -98,16 +105,27 @@ function createCone(routerElement, routes, defaultNavState, routerConfig) {
             const _query = query || {}
             const _context = context || {} 
 
-            route.callable()
-                .then((page) => {
-                    if ('default' in page) {
-                        return routerElement.replaceChildren(page.default(_params, _query, _context))
-                    }else{
-                        return routerElement.replaceChildren(page(_params, _query, _context))
-                    }
-                }).catch((error) => console.error('error changing page', error))
+            if (route.component instanceof HTMLElement) {
+                return routerElement.replaceChildren(route.component)
+            }else{
+                const page = route.component(_params, _query, _context)
+                if (page instanceof HTMLElement) {
+                    return routerElement.replaceChildren(page)
+                }else{
+                    page.then((page) => {
+                        if ('default' in page) {
+                            return routerElement.replaceChildren(page.default(_params, _query, _context))
+                        }else{
+                            return routerElement.replaceChildren(page(_params, _query, _context))
+                        }
+                    }).catch((error) => console.error('error changing page', error))
+                }
+            }
         });
-    })
+    }
+
+    routes.forEach(route => buildRoute(route))
+    
 
     // nav state
     const _defaultNavState = typeof defaultNavState === 'undefined' ? null : defaultNavState
@@ -127,6 +145,7 @@ function createCone(routerElement, routes, defaultNavState, routerConfig) {
     window.onpopstate = (event) => router.dispatch(event.target.location.href)
 
     window.onload = (event) => {
+        console.log('window.onload', window.history.state)
         setNavState(window.history.state)
         router.dispatch(event.target.location.href)
         if (typeof getNavState() === 'undefined') setNavState(null)
@@ -173,6 +192,7 @@ function createCone(routerElement, routes, defaultNavState, routerConfig) {
     return {
         routerElement,
         currentPage,
+        route,
         navUrl: router.navUrl,
         backendUrl: router.backendUrl,
         navState,
@@ -186,3 +206,4 @@ function createCone(routerElement, routes, defaultNavState, routerConfig) {
 }
 
 export default createCone
+export { route }

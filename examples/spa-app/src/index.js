@@ -1,6 +1,7 @@
+import context from "./context"
 import navbar from "./app/navbar"
 import van from "vanjs-core"
-import context from "./context"
+
 
 const { routerElement } = context
 
@@ -11,5 +12,7 @@ const App = () =>
     Navbar(),
     routerElement
   )
+
+console.log("index.js")
 
 document.body.replaceChildren(App())

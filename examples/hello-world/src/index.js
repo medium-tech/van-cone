@@ -1,27 +1,19 @@
-import createCone from 'van-cone'
+import createCone, { route } from 'van-cone'
 import van from 'vanjs-core'
 const { div, p, span, hr } = van.tags
 
 // define page components
 const homePage = () => div('Home Page')
 const userPage = (params) => div('User Page', p('userId: ' + params.userId))
-const otherPage = () => {
-  const htmlStr = '<div>Other Page</div>'
-  const parser = new DOMParser();
-  const parsed = parser.parseFromString(htmlStr, 'text/html');
-  return parsed.body.firstChild
-}
 
-// define routes
 const routes = [
-  { path: '/', name: 'home', callable: async () => homePage },
-  { path: '/user/:userId', name: 'user', callable: async () => userPage },
-  { path: '/other', name: 'other', callable: async () => otherPage }
+  route('home', '/', homePage),
+  route('user', '/user/:userId', userPage)
 ]
 
 // create the spa object
 const routerElement = div({ id: 'layout' })
-const { link } = createCone(routerElement, routes)
+const { link } = createCone({routerElement: routerElement, routes: routes})
 
 // main app layout
 const App = () =>
