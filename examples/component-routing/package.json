@@ -1,0 +1,24 @@
+{
+  "name": "component-routing-example",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "bundle-visualizer": "vite-bundle-visualizer",
+    "test": "npx playwright test",
+    "test-ui": "npx playwright test --ui",
+    "test-report": "npx playwright show-report"
+  },
+  "dependencies": {
+    "van-cone": "^0.0.4",
+    "vanjs-core": "^1.2.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.1",
+    "@types/node": "^20.10.6",
+    "vite": "^4.5.1",
+    "vite-bundle-visualizer": "^0.7.0"
+  }
+}

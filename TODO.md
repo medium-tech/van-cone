@@ -4,10 +4,10 @@
 
 🟢 = finished
 
-* 🔴 add string and possible component response
-* 🔴 create example demoing each component/import type and tests
-* 🔴 redo hello world to match getting started guide
+* 🟢 add string as possible component response
+* 🟢 create example demoing each component/import type and tests
 * 🔴 update documentation
 * 🔴 review type file
-* 🔴 remove unwanted console.log calls
+* 🟡 remove unwanted console.log calls
 * 🔴 verify build sizes
+* 🔴 remove sym links in example node_modules
