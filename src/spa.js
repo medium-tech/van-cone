@@ -81,12 +81,8 @@ class Router {
 	}
 };
 
-const route = (routeName, path, component, options) => {
-    return { name: routeName, path, component, ...options }
-}
-
 function createCone(coneConfig) {
-    const { routerElement, routes, defaultNavState, routerConfig } = coneConfig
+    const { routerElement, defaultNavState, routerConfig } = coneConfig
 
     const currentPage = van.state("")
 
@@ -124,9 +120,8 @@ function createCone(coneConfig) {
         });
     }
 
-    routes.forEach(route => buildRoute(route))
+    const route = (routeName, path, component, options) => buildRoute({ name: routeName, path, component, ...options })
     
-
     // nav state
     const _defaultNavState = typeof defaultNavState === 'undefined' ? null : defaultNavState
     const navState = van.state(_defaultNavState)
@@ -206,4 +201,3 @@ function createCone(coneConfig) {
 }
 
 export default createCone
-export { route }

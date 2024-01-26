@@ -83,6 +83,7 @@ declare function route(
 declare type CreateConeReturn = {
   routerElement: HTMLElement;
   currentPage: State<string>;
+  route: route;
   navUrl: (routeName: string, params?: RouteParams, query?: QueryParams) => string;
   backendUrl: (routeName: string, params?: RouteParams, query?: QueryParams) => string;
   navState: State<NavState>;
@@ -96,7 +97,6 @@ declare type CreateConeReturn = {
 
 declare type ConeConfig = {
   routerElement: HTMLElement,
-  routes: Route[],
   defaultNavState?: NavState,
   routerConfig?: RouterConfig
 };

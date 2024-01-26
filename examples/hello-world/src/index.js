@@ -1,4 +1,4 @@
-import createCone, { route } from 'van-cone'
+import createCone from 'van-cone'
 import van from 'vanjs-core'
 const { div, p, span, hr } = van.tags
 
@@ -6,14 +6,12 @@ const { div, p, span, hr } = van.tags
 const homePage = () => div('Home Page')
 const userPage = (params) => div('User Page', p('userId: ' + params.userId))
 
-const routes = [
-  route('home', '/', homePage),
-  route('user', '/user/:userId', userPage)
-]
-
 // create the spa object
 const routerElement = div({ id: 'layout' })
-const { link } = createCone({routerElement: routerElement, routes: routes})
+const { link, route } = createCone({routerElement: routerElement})
+
+route('home', '/', homePage)
+route('user', '/user/:userId', userPage)
 
 // main app layout
 const App = () =>

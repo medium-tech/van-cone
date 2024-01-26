@@ -15,6 +15,10 @@ A Van Cone powered demo SPA, 3.82 kB bundled and gzipped!
 - handler for user id not found
 - not found page
 
+## About
+
+The main entry point is `./index.js`, the Cone App is defined in `./context.js`, the pages and navbar can be found in `./app`.
+
 ## Instructions
 
 **install**
