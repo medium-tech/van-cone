@@ -135,4 +135,4 @@ In [VanJS](https://vanjs.org) and Van Cone components are simply Javascript func
 
 
 # What next?
-[Routing and Navigation Guide](./routing-and-navguide.md)
+[Routing and Navigation Guide](./routing-and-nav-guide.md)

@@ -2,7 +2,11 @@
   "name": "van-cone",
   "version": "0.0.4",
   "description": "a lightweight package providing basic SPA such as routing, history and navigation functionality for VanJS applications",
-  "homepage": "https://github.com/vanjs-org/van/blob/main/addons/van_cone/README.md",
+  "homepage": "https://medium-tech.github.io/van-cone-website",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/medium-tech/van-cone"
+  },
   "main": "src/spa.js",
   "types": "src/spa.d.ts",
   "scripts": {

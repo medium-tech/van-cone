@@ -1,7 +1,7 @@
 # API Reference
 
- ### createCone(routerElement, routes, defaultNavState)
- The only exported function from the module, used to create an application.
+### createCone(routerElement, routes, defaultNavState)
+The only exported function from the module, used to create an application.
 
 **arguments**
 
