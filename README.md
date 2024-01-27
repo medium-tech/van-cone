@@ -95,6 +95,10 @@ Example HTML:
 
 # Changelog
 
+**0.0.5**
+- add `route` function, remove object style route definitions from constructor functions
+- add typescript definitions
+
 **0.0.4**
 - change `navigate` and `pushHistory` to use route names instead of url strings, and accept optional nav state, they now return the url string.
 - rename `navLink` to `link`
