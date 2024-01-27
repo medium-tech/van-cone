@@ -49,7 +49,6 @@ class Router {
 	}
 
 	_formatUrl(routeName, isBackend, params = {}, query = {}) {
-        console.log('formatting url', routeName, isBackend, params, query)
 		const route = this.routes.find(r => r.name === routeName);
 
 		if (!route) {

@@ -12,7 +12,5 @@ const App = () =>
     Navbar(),
     routerElement
   )
-
-console.log("index.js")
-
+  
 document.body.replaceChildren(App())

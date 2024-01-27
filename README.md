@@ -4,9 +4,9 @@ _Author: [b-rad-c](https://github.com/b-rad-c)_
 
 ### An SPA framework add on for VanJS
 
-🔥 **Van Cone plus VanJS can create a fully featured SPA app that minifies and gzips 3.82 kB!** 🔥
+🔥 **Van Cone plus VanJS can create a fully featured SPA app that minifies and gzips to ~4.0 kB!** 🔥
 
-This lightweight (214 lines) VanJS addon adds the following features:
+This lightweight (~215 lines) VanJS addon adds the following features:
 - Navigation powered by custom router with async loading
     - url and query param parsing
     - integrates with browser history
@@ -18,6 +18,12 @@ This lightweight (214 lines) VanJS addon adds the following features:
     - dynamic css styling for active route
     - pass additional context data such as a prefetched data or other configuration to route component
 - TypeScript support
+
+# Beta
+
+🚨 Van Cone is in Beta 🚨
+
+Van Cone is close but not quite out of beta, so use with your own caution.
 
 # Overview
 
@@ -82,7 +88,7 @@ Example HTML:
 
 ```
 
-# Documentation and examples
+# Documentation
 
 - [relative file link](./docs/api-reference.md) - if you're viewing on github or local repo
 - [absolute url](https://github.com/vanjs-org/van/blob/main/addons/van_cone/docs/API_REFERENCE.md) - if you're viewing on npmjs.org or other external mirrors

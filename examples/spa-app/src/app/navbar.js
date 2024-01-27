@@ -7,7 +7,6 @@ const { link } = context
 const { div, nav, hr } = van.tags
 
 const navbar = () => {
-  console.log('navbar.js - creating routes')
   return () =>
     div(
       nav(
