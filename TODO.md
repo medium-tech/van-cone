@@ -6,7 +6,7 @@
 
 * 🟢 add string as possible component response
 * 🟢 create example demoing each component/import type and tests
-* 🔴 update documentation
+* 🟡 update documentation
 * 🔴 review type file
 * 🟡 remove unwanted console.log calls
 * 🔴 verify build sizes

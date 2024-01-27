@@ -133,14 +133,6 @@ Run the following to open a bundle visualizer showing what is taking up space in
 # Components
 In [VanJS](https://vanjs.org) and Van Cone components are simply Javascript functions, there is no need for a specific object type as it adds unnecessary overhead to the frameworks. However, you'll note in the example above the `userPage` "component" is expecting a parameter `params` which is an object that includes a `userId` property parsed out of the url. The Van Cone router passes a specific set of arguments to the "component" providing SPA functionality without the overhead of an actual component. Read the [Component Guide](./component-guide.md) for more information.
 
-# Navigation
-### component navigation 
-- [link](./api-reference.md#linkprops-children)
-
-### programmatic navigation functions
-- [navigate](./api-reference.md#navigateroutename-options)
-- [pushHistory](./api-reference.md#pushhistoryroutename-options)
 
 # What next?
-* [API Documentation](./api-reference.md)
-* [Component Guide](./component-guide.md)
+[Routing and Navigation Guide](./routing-and-navguide.md)

@@ -1,19 +1,37 @@
-# Component and routing guide
+# Component guide
 
-In an effort to keep the VanJS ecosystem minimal Van Cone does not define a component object or function like many reactive frameworks however you will see that they are not necessary with Van Cone and VanJS. When the term component is used in Van Cone documentation it refers to a callable that takes a specific set of arguments from the Van Cone router and returns a tag element from Van JS, for example `van.tags.div`. These "components" are only used with the router to create a navigable page, for other re-useable "components" you can use a bare function like normal VanJS code.
+In an effort to keep the VanJS ecosystem minimal Van Cone does not define a component object or function like many reactive frameworks however you will see that they are not necessary with Van Cone and VanJS. When the term component is used in Van Cone documentation it refers to a value that is mapped to a specific route (see [routing guide](./routing-and-navguide.md)). That value can be an element (created by vanjs or `document.createElement`), a `string` that will be converted into an element or a `function` that returns a string or element.
 
-In this guide you will find:
+```javascript
+// define a component using a vanjs tag
+const homePage = div('Home Page')
 
-* [component function signature](#function-signature)
-* [a hello world example](#hello-world-with-router)
-* [a url and query param example](#url--query-params-example)
-* [a full component example with nav link component and context](#full-component-example)
-* [an example using a backend endpoint which is different than the frontend](#different-backend-endpoint)
-* [wildcard / 404 not found](#wildcard-not-found-page)
-* [define the route's component via callable](#define-the-routes-component-via-callable)
-* [define the route's component via import](#define-the-routes-component-via-import)
+// define a component using a vanjs tag returned by a function
+const functionPage = () => div('Function Page')
 
-# Component functions
+// define a component by document
+const documentElementPage = () => {
+  const div = document.createElement('div')
+  div.innerHTML = 'Document Element Page'
+  return div
+}
+
+// define a component by string
+const fromStringPage = '<div>From String Page</div>'
+
+// create the spa object
+const { link, route } = createCone({routerElement: div()})
+
+// create routes
+route('home', '/', homePage)
+route('function', '/function', functionPage)
+route('doc-element', '/doc-element', documentElementPage)
+route('from-string', '/from-string', fromStringPage)
+```
+
+# Components as functions
+
+A function is needed to take full advantage of the Van Cone routing including parsing query and url params and passing dymanic context from the [`link`](./api-reference.md#linkprops-children) component.
 
 A component function takes up to 3 arguments and returns a van js tag element. The Van Cone router will call this component function when activating the route.
 
@@ -31,7 +49,7 @@ const myComponent = (params, query, context) => div(...)
 
 ## function return
 
-An `HTMLElement`, typically (but not necessarily) created by a VanJS tag, such as `van.tags.div`.
+An `HTMLElement`, created with a VanJS function or `document.createElement`, or a `string` that can be converted into an `HTMLElement`.
 
 # Examples
 
@@ -41,59 +59,22 @@ An `HTMLElement`, typically (but not necessarily) created by a VanJS tag, such a
 const homePage = () => div('Home Page')
 ```
 
-You obviously don't need a framework to do this, outside of the Van Cone router, components are generally not needed because they are simply a function that returns a van element. They are many ways to create re-usable components, component functions in Van Cone are only useful to create a concept of a page that integrates with the router.
-
-
-### hello world with router
-```javascript
-const homePage = () => div('Home Page')
-
-const routes = [{
-    path: "/",
-    name: "home",
-    title: "VanJS Example | Home",
-    callable: async () => homePage
-}]
-```
+You obviously don't need a framework to do this, outside of the Van Cone router, components are generally not needed because they are simply a function that returns an element. They are many ways to create re-usable components, component functions in Van Cone are only useful to create a concept of a page that integrates with the router.
 
 ### url + query params example
 URL params are defined in the `path` property of the route object using a colon, query params are automatically parsed and passed to the component without needing to setup anything in the route. Currently query args are returned as raw strings and the component may need to do its own type validation/conversion.
 
 ```javascript
+
 // use url params to parse a user id
 const userPage = (params) => div('User Page', p('userId: ' + params.userId))
 
 // use query params to define a sort on a list page
 const userListPage = (params, query) => div('User List', p('sort by: ' + query.sort))
-
-const routes = [
-    {
-        path: "/user/:userId",
-        name: "user",
-        title: "VanJS Example | User",
-        callable: async () => import('./app/pages/user')
-    },
-    {
-        path: "/users",
-        name: "users",
-        title: "VanJS Example | User List",
-        callable: async () => import('./app/pages/userList')
-    }
-]
 ```
 
 ### full component example
 Here is a full example showing url parameters, query parameters and additional context.
-
-Given the following route:
-```javascript
-{
-    path: "/user/:id",
-    name: "user",
-    title: "VanJS Example | User",
-    callable: async () => import('./app/pages/user')
-}
-```
 
 A component can use the data as follows:
 ```javascript
@@ -117,89 +98,5 @@ const data = {'name': 'María'}
 link({name: 'user', params: {id: 123}, query: {'data': 'hello'}, context: data}, 'User')
 ```
 
-### different backend endpoint
-When data is fetched from a different endpoint provide a backend path as follows. See [backendUrl](./api-reference.md#backendurlroutename-params-query) for information on generating a backend url for fetching data.
-```javascript
-const routes = [
-    {
-        path: "/user/:userId",
-        backend: "/api/user/:userId",
-        name: "user",
-        title: "VanJS Example | User",
-        callable: async () => import('./app/pages/user')
-    }
-]
-```
-
-### wildcard (not found page)
-```javascript
-const routes = [{
-    path: ".*",
-    name: "notFound",
-    title: "VanJS Example | Not Found",
-    callable: async () => import('./app/pages/notFound')
-  }
-];
-```
-
-### define the route's component via callable
-The simplest way to define a route's component.
-```javascript
-const homePage = () => div('Home Page')
-
-const routes = [{
-    path: "/",
-    name: "home",
-    title: "VanJS Example | Home",
-    callable: async () => homePage
-}]
-```
-
-### define the route's component via import
-A route's component can also be returned via import.
-
-```javascript
-// Define route
-const routes = [{
-    path: ".*",
-    name: "home",
-    title: "VanJS Example | Home",
-    callable: async () => import('./app/pages/homePage')
-  }
-];
-```
-
-define component:
-```javascript
-// ./app/pages/homePage.js
-import van from "vanjs-core";
-
-const { section, div, br, h1, img } = van.tags
-
-const homePage = () => {
-
-  return section(
-      h1("Welcome to this SPA demo using VanJS!"),
-      br(),
-      div(
-        { style: "text-align:center;" },
-        img({ src: vanLogo, alt: "VanJS", style: "height:100px;width:100px;" })
-      )
-    );
-};
-
-export default homePage;
-
-```
-
-Note that you can also use a non-default export like this:
-
-```javascript
-const routes = [{
-    path: ".*",
-    name: "home",
-    title: "VanJS Example | Home",
-    callable: async () => import('./pageComponents').homePage
-  }
-];
-```
+# What next?
+[API Documentation](./api-reference.md)

@@ -6,7 +6,7 @@ _Author: [b-rad-c](https://github.com/b-rad-c)_
 
 🔥 **Van Cone plus VanJS can create a fully featured SPA app that minifies and gzips 3.82 kB!** 🔥
 
-This lightweight (less than 200 lines) VanJS addon adds the following features:
+This lightweight (214 lines) VanJS addon adds the following features:
 - Navigation powered by custom router with async loading
     - url and query param parsing
     - integrates with browser history
