@@ -1,6 +1,6 @@
 # Component guide
 
-In an effort to keep the VanJS ecosystem minimal Van Cone does not define a component object or function like many reactive frameworks however you will see that they are not necessary with Van Cone and VanJS. When the term component is used in Van Cone documentation it refers to a value that is mapped to a specific route (see [routing guide](./routing-and-navguide.md)). That value can be an element (created by vanjs or `document.createElement`), a `string` that will be converted into an element or a `function` that returns a string or element.
+In an effort to keep the VanJS ecosystem minimal Van Cone does not define a component object or function like many reactive frameworks however you will see that they are not necessary with Van Cone and VanJS. When the term component is used in Van Cone documentation it refers to a value that is mapped to a specific route (see [routing guide](./routing-and-nav-guide.md)). That value can be an element (created by vanjs or `document.createElement`), a `string` that will be converted into an element or a `function` that returns a string or element.
 
 ```javascript
 // define a component using a vanjs tag
