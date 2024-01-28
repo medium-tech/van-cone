@@ -91,7 +91,7 @@ declare type CreateConeReturn = {
   setNavState: (newState: NavState) => void;
   navigate: (routeName: string, options: NavigateOptions) => void;
   pushHistory: (routeName: string, options: NavigateOptions) => void;
-  isCurrentPage: () => State<boolean>;
+  isCurrentPage: () => boolean;
   link: (props: Record<string, any>, ...children:any[]) => HTMLAnchorElement
 };
 

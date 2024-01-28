@@ -95,6 +95,9 @@ Example HTML:
 
 # Changelog
 
+**0.0.6**
+- change `isCurrentPage` to return a boolean instead of a van derive object.
+
 **0.0.5**
 - add `route` function, remove object style route definitions from constructor functions
 - add typescript definitions
@@ -117,12 +120,30 @@ Example HTML:
 
 
 # Support, issues, and suggestions
-Open an issue or discussion either on the [official repo](https://github.com/vanjs-org/van) or [my fork](https://github.com/b-rad-c/van/tree/main). Make sure to tag my username: [@b-rad-c](https://github.com/b-rad-c).
+Open an issue or discussion either in the [github repo](https://github.com/medium-tech/van-cone)
 
 # Contributing
 Got some skills? Want to contribute? Send a pull request!
 
-I, [@b-rad-c](https://github.com/b-rad-c) am the maintainer of this project however the code is contained in the official [VanJS repo](https://github.com/vanjs-org/van). To contribute to this project please fork [my fork](https://github.com/b-rad-c/van/tree/main) and submit a pull request there. I will approve and then submit a pull request to the official repository. I couldn't refrain from writing 'fork my fork', sorry, not sorry.
+# Development
+start here: 
+
+```bash
+git clone https://github.com/medium-tech/van-cone
+```
+
+In the `./examples` folder you will find `init.sh` which will install dependencies for each example. If you run the script with the link option it will use your npm's link for `van-cone` so that you can test the examples in real time as you change the code. 
+
+```bash
+init.sh --link
+```
+
+[See here](https://docs.npmjs.com/cli/v9/commands/npm-link) for docs on setting up an npm link.
+
+Each example has a dev command `npm run dev` for launching the development server, and `npm run test` for testing. You can run `./examples/test.sh` or `npm run test` from the root pacakge to run tests in all examples.
+
+If you want to delete `node_modules` for each example run `./examples/reset.sh`.
+
 
 ### Roadmap
 Some things I'm interested in.

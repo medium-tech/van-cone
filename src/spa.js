@@ -84,7 +84,7 @@ function createCone(coneConfig) {
     const { routerElement, defaultNavState, routerConfig } = coneConfig
 
     const currentPage = van.state("")
-    const isCurrentPage = (pageName) => van.derive(() => currentPage.val === pageName)
+    const isCurrentPage = (pageName) => (van.derive(() => currentPage.val === pageName)).val
 
     // routing
     const router = new Router(routerConfig);
@@ -182,7 +182,7 @@ function createCone(coneConfig) {
 
         return van.tags.a(
             {
-                "aria-current": van.derive(() => (isCurrentPage(name).val ? "page" : "")),
+                "aria-current": van.derive(() => (isCurrentPage(name) ? "page" : "")),
                 href: router.navUrl(name, params, query),
                 target: target || "_self",
                 role: "link",
