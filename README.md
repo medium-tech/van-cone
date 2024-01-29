@@ -95,6 +95,9 @@ Example HTML:
 
 # Changelog
 
+**0.0.7**
+- minor update in type definition file
+
 **0.0.6**
 - change `isCurrentPage` to return a boolean instead of a van derive object.
 
