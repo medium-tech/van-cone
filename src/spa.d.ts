@@ -80,7 +80,7 @@ declare function route(
   options?: RouteFunctionOptions
 ): Route;
 
-declare type CreateConeReturn = {
+declare type coneApp = {
   routerElement: HTMLElement;
   currentPage: State<string>;
   route: route;
@@ -103,7 +103,7 @@ declare type ConeConfig = {
 
 declare function createCone(
   coneConfig: ConeConfig
-): CreateConeReturn;
+): coneApp;
 
 export default createCone;
 export { route };

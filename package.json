@@ -1,6 +1,6 @@
 {
   "name": "van-cone",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "a lightweight package providing basic SPA such as routing, history and navigation functionality for VanJS applications",
   "homepage": "https://medium-tech.github.io/van-cone-website",
   "repository": {

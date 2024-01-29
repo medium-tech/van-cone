@@ -12,7 +12,7 @@
     "test-report": "npx playwright show-report"
   },
   "dependencies": {
-    "van-cone": "^0.0.6",
+    "van-cone": "^0.0.7",
     "vanjs-core": "^1.2.7"
   },
   "devDependencies": {
