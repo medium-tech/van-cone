@@ -48,7 +48,7 @@ route('page-a', '/page-a', async () => (await import('./pages')))
 route('page-b', '/page-b', async () => (await import('./pages')).pageB)
 ```
 
-## Advaned routing
+## Advanced routing
 
 ```javascript
 route('home', '/', homePage, {title: 'Van Cone | Home'})
