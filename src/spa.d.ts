@@ -89,8 +89,8 @@ declare type coneApp = {
   navState: State<NavState>;
   getNavState: () => NavState;
   setNavState: (newState: NavState) => void;
-  navigate: (routeName: string, options: NavigateOptions) => void;
-  pushHistory: (routeName: string, options: NavigateOptions) => void;
+  navigate: (routeName: string, options?: NavigateOptions) => void;
+  pushHistory: (routeName: string, options?: NavigateOptions) => void;
   isCurrentPage: () => boolean;
   link: (props: Record<string, any>, ...children:any[]) => HTMLAnchorElement
 };

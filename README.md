@@ -95,6 +95,9 @@ Example HTML:
 
 # Changelog
 
+**0.0.8**
+- fix type definitions for `navigate` and `pushHistory` functions
+
 **0.0.7**
 - minor update in type definition file
 
