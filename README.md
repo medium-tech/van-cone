@@ -157,6 +157,7 @@ Van Cone is an addon for VanJS which is short for **Van**illa **J**ava**S**cript
 
 # Contributors
 - [@yahia-berashish](https://github.com/yahia-berashish)
+- [@efost](https://github.com/efost)
 
 # Credit
 Router based on [minimal router](https://github.com/jmhdez/minimal-router) (no longer maintained).
