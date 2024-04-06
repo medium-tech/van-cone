@@ -15,6 +15,10 @@ Van Cone has only one exported function [`createCone`](./api-reference.md#create
 ### TypeScript
 - Supported! 🥳
 
+### Official release
+
+Van Cone has reached version 1.0.0 and is no longer in beta! 🥳
+
 # Your first Van Cone App
 
 Init your npm project

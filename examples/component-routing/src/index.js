@@ -1,9 +1,17 @@
 import createCone from 'van-cone'
 import van from 'vanjs-core'
-const { div, span, hr } = van.tags
+const { div, span, hr, button, br } = van.tags
 
 // define page components
-const homePage = div('Home Page')
+const homePage = div(
+  'Home Page', 
+  br(),
+  // these buttons exists to test the navigation functions
+  button({onclick: () => navigate('default')}, 'test navigation function - wo options'), br(),
+  button({onclick: () => navigate('default', {query: {'x': '1', 'y': '2'}})}, 'test navigation function - w options'), br(),
+  button({onclick: () => pushHistory('default')}, 'test pushHistory function - wo options'), br(),
+  button({onclick: () => pushHistory('default', {query: {'x': '1', 'y': '2'}})}, 'test pushHistory function - w options')
+)
 const vanJSElementPage = div('Van JS Element Page')
 const functionPage = () => div('Function Page')
 
@@ -17,7 +25,7 @@ const fromStringPage = '<div>From String Page</div>'
 
 // create the spa object
 const routerElement = div({ id: 'layout' })
-const { link, route } = createCone({routerElement: routerElement})
+const { link, route, navigate, pushHistory } = createCone({routerElement: routerElement})
 
 route('home', '/', homePage)
 route('van-element', '/van-element', vanJSElementPage)

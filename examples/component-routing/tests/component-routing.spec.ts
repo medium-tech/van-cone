@@ -28,3 +28,23 @@ test('test', async ({ page }) => {
   await page.getByRole('link', { name: 'Non Default String' }).click();
   await expect(page.locator('#layout')).toContainText('Non Default String Page');
 });
+
+test('test navigate function', async ({ page }) => {
+  await page.goto('http://localhost:5173');
+  await page.getByRole('button', { name: 'test navigation function - wo options' }).click();
+  await expect(page.locator('#layout')).toContainText('Default Export Page');
+
+  await page.goto('http://localhost:5173');
+  await page.getByRole('button', { name: 'test navigation function - w options' }).click();
+  await expect(page.locator('#layout')).toContainText('Default Export Page');
+});
+
+test('test pushHistory function', async ({ page }) => {
+  await page.goto('http://localhost:5173');
+  await page.getByRole('button', { name: 'test pushHistory function - wo options' }).click();
+  await expect(page.locator('#layout')).toContainText('Home Page');
+
+  await page.goto('http://localhost:5173');
+  await page.getByRole('button', { name: 'test pushHistory function - w options' }).click();
+  await expect(page.locator('#layout')).toContainText('Home Page');
+});

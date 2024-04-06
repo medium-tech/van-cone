@@ -19,11 +19,10 @@ This lightweight (~215 lines) VanJS addon adds the following features:
     - pass additional context data such as a prefetched data or other configuration to route component
 - TypeScript support
 
-# Beta
+### Official release
 
-🚨 Van Cone is in Beta 🚨
+Van Cone has reached version 1.0.0 and is no longer in beta.
 
-Van Cone is close but not quite out of beta, so use with your own caution.
 
 # Overview
 
@@ -94,6 +93,10 @@ Example HTML:
 - [absolute url](https://github.com/vanjs-org/van/blob/main/addons/van_cone/docs/API_REFERENCE.md) - if you're viewing on npmjs.org or other external mirrors
 
 # Changelog
+
+**1.0.0**
+- fix issue #4 - argument for `navigate` and `pushHistory` functions
+- Van Cone is out of beta and is API stable
 
 **0.0.8**
 - fix type definitions for `navigate` and `pushHistory` functions

@@ -158,18 +158,19 @@ function createCone(coneConfig) {
 
     // navigation functions
     const navigate = (routeName, options) => {
-        const { params, query, navState, context } = options
+        const { params, query, navState, context, dispatch } = options || {}
         const url = router.navUrl(routeName, params, query)
         
         if (typeof navState !== 'undefined') setNavState(navState)
         history.pushState(getNavState(), '', url);
 
-        if (typeof options.dispatch === 'undefined' || options.dispatch === true) router.dispatch(url, context)
+        if (typeof dispatch === 'undefined' || dispatch === true) router.dispatch(url, context)
 
         return url
     }
 
     const pushHistory = (routeName, options) => {
+        options = options || {}
         options.dispatch = false
         return navigate(routeName, options)
     } 

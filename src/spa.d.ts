@@ -21,10 +21,10 @@ declare type RouteHandlerProps = {
 };
 
 declare type NavigateOptions = {
-  params: RouteParams;
-  query: QueryParams;
-  navState: NavState;
-  context: RouterContext;
+  params?: RouteParams;
+  query?: QueryParams;
+  navState?: NavState;
+  context?: RouterContext;
 };
 
 declare type RouterConfig = {
