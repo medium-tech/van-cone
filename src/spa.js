@@ -84,7 +84,7 @@ function createCone(coneConfig) {
     const { routerElement, defaultNavState, routerConfig } = coneConfig
 
     const currentPage = van.state("")
-    const isCurrentPage = (pageName) => (van.derive(() => currentPage.val === pageName)).val
+    const isCurrentPage = (pageName) => currentPage.val === pageName
 
     // routing
     const router = new Router(routerConfig);
