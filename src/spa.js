@@ -114,18 +114,25 @@ function createCone(coneConfig) {
                 replaceContent(route.component)
             }else{
                 const page = route.component(_params, _query, _context)
-                if (page instanceof HTMLElement || typeof page === 'string') {
+                
+		if (page instanceof HTMLElement || typeof page === 'string') {
                     return replaceContent(page)
-                }else{
-                    page.then((page) => {
-                        if(typeof page === 'string') {
-                            return replaceContent(page)
-                        }else if ('default' in page) {
-                                return replaceContent(page.default)
-                            }else{
-                                return replaceContent(page)
-                            }
-                        }).catch((error) => console.error('error changing page', error))
+                } else if (typeof page === 'function') {
+                    const result = page()
+                    if (result instanceof HTMLElement || typeof result === 'string') {
+                        return replaceContent(result)
+                    } else if (result?.then instanceof Function) {
+                        // In case the function returns a Promise
+                        result.then(resolved => replaceContent('default' in resolved ? resolved.default : resolved))
+                              .catch((error) => console.error('error changing page', error))
+                    } else {
+                        console.error("route.component function returned an unsupported value", result)
+                    }
+                } else if (page?.then instanceof Function) {
+                    page.then(resolved => replaceContent('default' in resolved ? resolved.default : resolved))
+                        .catch((error) => console.error('error changing page', error))
+                } else {
+                    console.error("Unsupported return type from route.component", page)
                 }
             }
         });
